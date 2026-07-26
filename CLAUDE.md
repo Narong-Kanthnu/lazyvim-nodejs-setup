@@ -13,7 +13,7 @@ This is a LazyVim-based Neovim configuration optimized for Node.js/TypeScript de
 - **init.lua**: Bootstraps lazy.nvim and requires `config.lazy`
 - **lua/config/lazy.lua**: Central plugin manager configuration that imports:
   - LazyVim core + extras (eslint, prettier, typescript, copilot, etc.)
-  - Custom plugin modules: `plugins`, `plugins.lsp`, `plugins.git`, `plugins.editor`, `plugins.ai`, `plugins.other`
+  - Custom plugin modules: `plugins.lsp`, `plugins.git`, `plugins.editor`, `plugins.ai`, `plugins.other` (all specs live in these subdirectories; there are no top-level `lua/plugins/*.lua` files, so `{ import = "plugins" }` is intentionally absent — re-add it if a spec is ever placed directly in `lua/plugins/`)
 
 ### Configuration Files
 
