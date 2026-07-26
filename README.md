@@ -94,7 +94,7 @@ nvim
 | `gr` | Go to references |
 | `gi` | Go to implementation |
 | `<Leader>ca` | Code actions |
-| `<Leader>rn` | Rename symbol |
+| `<Leader>cr` | Rename symbol |
 
 ### AI Integration
 
