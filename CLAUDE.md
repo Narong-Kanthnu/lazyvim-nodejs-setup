@@ -81,11 +81,6 @@ Each plugin module is self-contained with dependencies, lazy-loading conditions,
 - **which_key.lua**: Keymap display helper with modern preset
 - **markdown.lua**: Markdown preview with peek.nvim (`<Leader>md` open, `<Leader>mq` close) and llm-kiwi.nvim knowledge graph (`<Leader>kw` open, `<Leader>kq` close) — llm-kiwi workspaces configured via `PERSONAL_VAULT_PATH` / `WORK_VAULT_PATH` env vars (falls back to cwd when neither is set).
 
-#### Refactoring (`lua/plugins/refactoring.lua`)
-
-- **inc-rename.nvim**: Incremental rename (`<Leader>rn`)
-- **refactoring.nvim**: Refactoring menu (`<Leader>r` in visual mode)
-
 #### Shared Utilities (`lua/utils/`)
 
 - **node_resolver.lua**: Resolves a node binary even when nvm isn't sourced in the launcher shell (`$PATH` → `~/.nvm/alias/default` → highest installed version). Used by `copilot.lua` (`copilot_node_command`) and `mason.lua` (prepends node bin dir to `vim.env.PATH` so spawned `npm` is found).
@@ -109,7 +104,7 @@ Each plugin module is self-contained with dependencies, lazy-loading conditions,
 ### LSP
 - `gD/gd/gi/gr`: Declaration/definition/implementation/references
 - `<Leader>ca`: Code actions
-- `<Leader>rn`: Incremental rename
+- `<Leader>cr`: Rename symbol (LazyVim default)
 - `<Leader>cm`: Open Mason UI
 
 ### Telescope
@@ -164,10 +159,6 @@ Each plugin module is self-contained with dependencies, lazy-loading conditions,
 ### LLM Kiwi (Knowledge Graph)
 - `<Leader>kw`: Open knowledge network graph (multi-workspace vis.js force-directed graph)
 - `<Leader>kq`: Stop running graph server
-
-### Refactoring
-- `<Leader>rn`: Incremental rename
-- `<Leader>r`: Refactoring menu (visual mode)
 
 ### UI
 - `<Leader>zz`: Zoom mode toggle
