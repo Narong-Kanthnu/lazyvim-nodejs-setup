@@ -61,6 +61,7 @@ nvim
 - [lazygit](https://github.com/jesseduffield/lazygit) (optional) for git UI
 - [yazi](https://github.com/sxyazi/yazi) (optional) for file manager
 - [deno](https://deno.land/) (optional) for markdown preview (peek.nvim)
+- [jq](https://jqlang.github.io/jq/) (optional) for the JSON format/minify keymaps
 - A [Nerd Font](https://www.nerdfonts.com/) for icons
 
 ## Key Bindings
@@ -134,6 +135,16 @@ nvim
 |-----|--------|
 | `<Leader>fe` | File explorer (nvim-tree) |
 | `<Leader>fm` | Yazi file manager |
+
+### JSON
+
+Requires `jq` on `$PATH`. Both keymaps validate the buffer as JSON first and
+notify instead of touching it if `jq` is missing or the JSON is malformed.
+
+| Key | Action |
+|-----|--------|
+| `<Leader>jp` | Pretty-print the buffer (`jq .`) |
+| `<Leader>jm` | Minify the buffer (`jq -c .`) |
 
 ## Project Structure
 
