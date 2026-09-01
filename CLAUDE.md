@@ -160,6 +160,11 @@ Each plugin module is self-contained with dependencies, lazy-loading conditions,
 - `<Leader>kw`: Open knowledge network graph (multi-workspace vis.js force-directed graph)
 - `<Leader>kq`: Stop running graph server
 
+### JSON (jq)
+- `<Leader>jp`: Pretty-print the buffer with `jq .`
+- `<Leader>jm`: Minify the buffer with `jq -c .`
+- Both are defined in `lua/config/keymaps.lua`; they abort with a notification if `jq` is missing from `$PATH` or the buffer is not valid JSON.
+
 ### UI
 - `<Leader>zz`: Zoom mode toggle
 
