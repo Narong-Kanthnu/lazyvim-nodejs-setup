@@ -51,3 +51,25 @@ keymap.set("n", "gr", vim.lsp.buf.references, vim.tbl_extend("force", opts, { de
 keymap.set("n", "<Leader>gh", ":Gitsigns preview_hunk<Return>", opts)
 keymap.set("n", "<Leader>gt", ":Gitsigns toggle_current_line_blame<Return>", opts)
 keymap.set("n", "<Leader>gb", ":Git blame<Return>", opts)
+
+-- json format
+local function jq_format(args)
+  if vim.fn.executable("jq") == 0 then
+    vim.notify("jq not found in PATH", vim.log.levels.ERROR)
+    return
+  end
+  local text = table.concat(vim.api.nvim_buf_get_lines(0, 0, -1, false), "\n")
+  local ok, err = pcall(vim.json.decode, text)
+  if not ok then
+    vim.notify("Invalid JSON: " .. tostring(err), vim.log.levels.ERROR)
+    return
+  end
+
+  vim.cmd("silent %!jq " .. args)
+end
+keymap.set("n", "<Leader>jm", function()
+  jq_format("-c .")
+end, opts) -- minify
+keymap.set("n", "<Leader>jp", function()
+  jq_format(".")
+end, opts) -- pretty
